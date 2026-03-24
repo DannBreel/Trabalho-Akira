@@ -1,2 +1,2 @@
 # Trabalho-Akira
-Trabalho do akira 'toriama'
+Trabalho do akira 'toriyama'

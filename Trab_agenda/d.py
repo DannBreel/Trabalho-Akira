@@ -1,0 +1,1 @@
+a =[{'id': 1, 'matéria': 'geografia', 'nome': 'desenhar um mapa', 'data': '31/03/26', 'prazo': '20/05/26'}]

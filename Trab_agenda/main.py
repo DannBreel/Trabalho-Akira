@@ -32,15 +32,19 @@ for m in range(len(a)):
 
 #update
 if input("quer mudar algo? s/n")=="s":
-    x= int(input("qual id?"))
-    for m in range(len(a)):
+    x= int(input("qual id?"))           #na GUI tentar fazer tipo um sistema de seleção que abre pra baixo colocar lá id 1-n
+    for m in range(len(a)):             #oque vai impedir de colocar um id invalido
             if a[m]["id"] == x:
-                y=input("quer mudadar oq (colocar exatamente mesmo nome)") #na GUI tentar fazer tipo um sistema de seleção que abre pra baixo colocar lá id 1-n
-                a[m][y]=input("fale meu fi")                               #oque vai impedir de colocar um id invalido
-                break
+                y=input("quer mudadar oq (colocar exatamente mesmo nome)")  #mesma coisa com o valor de chave que quer alterar, fazer de uma forma que voce nao possa
+                if y!="id":                                                 #escrever livremente, pq se nao o caba vai digita "id" e fude com tudo
+                    a[m][y]=input("fale meu fi")                               
+                    break
+                else:
+                     print("safado")
+                     break
             else:
                 print("não encontrado")
-
+                
 print(a)
 
 #delete

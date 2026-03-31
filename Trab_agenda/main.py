@@ -5,14 +5,22 @@ Tim=datetime.datetime.now()
 
 a =[]
 
+# na GUI quando tiver s/n pode colocar varios botoes que vao redirecionar para o que voce quer fazer
+# tipo 4 botao, um pra ler, pra criar, deletar e atualizar, ficando tudo em uma so tela ao inves de cada um
+# ficar te perguntando toda vez
+
 #create
 while input("criar nova tarefa s/n")=="s":  
-    l= {}   
-    l["id"]= len(a) + 1
+    l= {}  
+    if len(a)!=0: 
+        l["id"]= int(a[len(a)-1]["id"])+1
+    else:
+        l["id"]=0
     l["matéria"]=input("materia?")
-    l["nome"]=input("nome?")
+    l["nome"]=input("nome?")    
+    l["nota"]=input("nota?")    #colocar um sistema de seleção tipo ]0,100]
     l["data"]=Tim.strftime("%d/%m/%y")
-    l["prazo"]=input("prazo?")
+    l["prazo"]=input("prazo?")  #colocar um sistema de selecionar data no calendario ou so aceitar dd/mm/yy quando estiver na GUI
     a.append(l)
     print(a)
 
@@ -27,10 +35,21 @@ if input("quer mudar algo? s/n")=="s":
     x= int(input("qual id?"))
     for m in range(len(a)):
             if a[m]["id"] == x:
-                y=input("quer mudadar oq (colocar exatamente mesmo nome)")
-                a[m][y]=input("fale meu fi")
+                y=input("quer mudadar oq (colocar exatamente mesmo nome)") #na GUI tentar fazer tipo um sistema de seleção que abre pra baixo colocar lá id 1-n
+                a[m][y]=input("fale meu fi")                               #oque vai impedir de colocar um id invalido
                 break
             else:
                 print("não encontrado")
 
+print(a)
+
+#delete
+if input("deletar tarefa? s/n")=="s":
+    d= int(input("qual id?"))
+    for m in range(len(a)):
+            if a[m]["id"] == d:
+                 if input(f"certeza? fazer isso deletara tarefa {a[m]["nome"]} s/n")=="s":
+                       del a[m]
+                       break
+                 
 print(a)

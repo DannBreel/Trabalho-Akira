@@ -1,2 +1,1 @@
-# Trabalho-Akira
-Trabalho do akira 'toriyama'
+escrever um resumo doque o arquivo faz como funciona

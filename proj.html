@@ -1,0 +1,140 @@
+<!-- index.html -->
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CRUD Tarefas </title>
+  <link rel="stylesheet" href="proj.css">
+</head>
+<body>
+
+<header>
+  <h1>Menu de Ações</h1>
+</header>
+
+<div class="container">
+
+  <div class="card">
+    <h2>O que você quer fazer?</h2>
+    <div class="grid">
+      <button onclick="mostrar('criar')">Criar</button>
+      <button onclick="mostrar('ler')">Ler</button>
+      <button onclick="mostrar('atualizar')">Atualizar</button>
+      <button onclick="mostrar('deletar')">Deletar</button>
+    </div>
+  </div>
+
+  <!-- CRIAR -->
+  <div id="criar" class="card hidden">
+    <h2>Criar</h2>
+    <input type="text" id="materia" placeholder="Matéria">
+    <input type="text" id="nome" placeholder="Nome">
+    <input type="number" id="nota" placeholder="Nota (0-100)">
+    <input type="date" id="prazo">
+    <button onclick="criar()">Salvar</button>
+  </div>
+
+  <!-- LER -->
+  <div id="ler" class="card hidden">
+    <h2>Lista</h2>
+    <div id="lista"></div>
+  </div>
+
+  <!-- ATUALIZAR -->
+  <div id="atualizar" class="card hidden">
+    <h2>Atualizar</h2>
+    <input type="number" id="idUpdate" placeholder="ID">
+    <select id="campoUpdate">
+      <option value="matéria">Matéria</option>
+      <option value="nome">Nome</option>
+      <option value="nota">Nota</option>
+      <option value="prazo">Prazo</option>
+    </select>
+    <input type="text" id="novoValor" placeholder="Novo valor">
+    <button onclick="atualizar()">Atualizar</button>
+  </div>
+
+  <!-- DELETAR -->
+  <div id="deletar" class="card hidden">
+    <h2>Deletar</h2>
+    <input type="number" id="idDelete" placeholder="ID">
+    <button onclick="deletar()">Deletar</button>
+  </div>
+
+</div>
+
+<script>
+let tarefas = [];
+
+function mostrar(secao){
+  document.querySelectorAll('.card').forEach(c => {
+    if(c.id) c.classList.add('hidden');
+  });
+  document.getElementById(secao).classList.remove('hidden');
+  if(secao === 'ler') render();
+}
+
+function criar(){
+  const materia = document.getElementById('materia').value;
+  const nome = document.getElementById('nome').value;
+  const nota = document.getElementById('nota').value;
+  const prazo = document.getElementById('prazo').value;
+
+  const id = tarefas.length ? tarefas[tarefas.length-1].id + 1 : 0;
+  const data = new Date().toLocaleDateString();
+
+  tarefas.push({id, matéria: materia, nome, nota, data, prazo});
+  alert('Criado!');
+}
+
+function render(){
+  const lista = document.getElementById('lista');
+  lista.innerHTML = '';
+
+  if(tarefas.length === 0){
+    lista.innerHTML = 'Agenda vazia';
+    return;
+  }
+
+  tarefas.forEach(t => {
+    const div = document.createElement('div');
+    div.className = 'item';
+    div.innerHTML = `
+      <strong>ID:</strong> ${t.id}<br>
+      Matéria: ${t.matéria}<br>
+      Nome: ${t.nome}<br>
+      Nota: ${t.nota}<br>
+      Data: ${t.data}<br>
+      Prazo: ${t.prazo}
+    `;
+    lista.appendChild(div);
+  });
+}
+
+function atualizar(){
+  const id = parseInt(document.getElementById('idUpdate').value);
+  const campo = document.getElementById('campoUpdate').value;
+  const valor = document.getElementById('novoValor').value;
+
+  const tarefa = tarefas.find(t => t.id === id);
+  if(!tarefa) return alert('Não encontrado');
+
+  tarefa[campo] = valor;
+  alert('Atualizado!');
+}
+
+function deletar(){
+  const id = parseInt(document.getElementById('idDelete').value);
+  const tarefa = tarefas.find(t => t.id === id);
+  if(!tarefa) return alert('Não encontrado');
+
+  if(confirm(`Deletar tarefa ${tarefa.nome}?`)){
+    tarefas = tarefas.filter(t => t.id !== id);
+    alert('Deletado!');
+  }
+}
+</script>
+
+</body>
+</html>

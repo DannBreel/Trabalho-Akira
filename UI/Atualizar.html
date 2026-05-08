@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="D:\trabajos\Trab_agenda\UI\styles.css">
+</head>
+<body>
+    <div>
+
+        <label for="id">id</label><br>                         <!-- Aq coloca min= menor id E max= maior id  se consiguir claro-->
+        <input type="number" id="id"><br>
+<br>
+        <label for="updt">valor para mudar</label><br>         <!-- pode mudar isso aq se tiver muito complicado-->
+        <select id="updt">                                     <!-- select é a dropbox dai vc usa esse o que o user escolher aqui pra definir o novo valor-->
+        <option value="materia">materia</option>               <!-- se for continuar desse jeito voce talvez tenha q usar JS pra alterar o type do updtV  -->
+        <option value="nome">nome do trabalho</option>
+        <option value="prazo">prazo</option>
+        <option value="nota">nota</option>
+        </select>
+<br>
+        <label for="updtV">novo valor</label><br>      <!--  esse input provavelmente vai ter que mudar conforme o que for escolhido no <select>    -->
+        <input type="text" id="updtV"><br>
+<br>
+        <a href="index.html"><button>Atualizar</button></a> <!--   lembra de colocar uma verificação pra ver se op user preencheu tudo certinho    -->
+                                                            <!--   acho que faz isso com <type="not null"> alguma coisa assim-->
+    </div>
+</body>
+</html>

@@ -1,0 +1,16 @@
+body{
+    text-align: center;
+
+}
+a{
+    text-decoration: none;
+}
+div.menu button{
+    padding: 50px;
+    font-size: 25px;
+    margin: 20px;
+}
+button:hover{
+    background-color: cadetblue;
+    color: azure;
+}

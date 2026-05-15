@@ -1,0 +1,74 @@
+
+
+button {
+    cursor: pointer;
+    border: none;
+    padding: 12px 20px;
+    border-radius: 10px;
+    transition: 0.3s;
+}
+
+.save-btn {
+    background: #2563eb;
+    color: white;
+}
+
+.clear-btn,
+.cancel-btn {
+    background: #374151;
+    color: white;
+}
+
+.delete-btn {
+    background: #dc2626;
+    color: white;
+}
+
+.edit-btn {
+    background: #9333ea;
+    color: white;
+    margin-top: 10px;
+}
+
+button:hover {
+    transform: scale(1.03);
+}
+
+.task-card {
+    background: rgba(255,255,255,0.05);
+    padding: 20px;
+    border-radius: 15px;
+    margin-top: 20px;
+}
+
+.back-btn {
+    color: white;
+    text-decoration: none;
+    font-size: 20px;
+}
+
+.modal {
+    position: fixed;
+    inset: 0;
+    background: rgba(0,0,0,0.7);
+    display: none;
+    justify-content: center;
+    align-items: center;
+}
+
+.modal-content {
+    background: #1e293b;
+    padding: 40px;
+    border-radius: 20px;
+    text-align: center;
+}
+
+.edit-form {
+    display: none;
+    margin-top: 20px;
+}
+
+.empty-msg {
+    margin-top: 20px;
+    opacity: 0.8;
+}

@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Agenda de Atividades</title>
+
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='styles.css') }}">
+
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+</head>
+<body>
+
+    <div class="overlay" id="overlay"></div>
+
+    <aside class="sidebar" id="sidebar">
+
+        <h2>Agenda</h2>
+
+        <a href="/criar">
+            <i class="fa-solid fa-plus"></i>
+            Criar
+        </a>
+
+        <a href="/ler">
+            <i class="fa-solid fa-book"></i>
+            Ler
+        </a>
+
+        <a href="/atualizar">
+            <i class="fa-solid fa-pen"></i>
+            Editar
+        </a>
+
+        <a href="/deletar">
+            <i class="fa-solid fa-trash"></i>
+            Deletar
+        </a>
+
+    </aside>
+    <main class="main">
+
+        <button class="menu-btn" onclick="toggleMenu()">
+            <i class="fa-solid fa-bars"></i>
+        </button>
+
+        <div class="hero-card">
+
+            <h1>Agenda de Atividades</h1>
+
+            <p>
+                Organize suas provas, trabalhos e tarefas em um único lugar.
+            </p>
+
+        </div>
+
+    </main>
+
+<script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>

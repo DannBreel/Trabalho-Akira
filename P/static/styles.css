@@ -1,0 +1,193 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Arial, Helvetica, sans-serif;
+}
+
+body{
+    background:#0f172a;
+    color:white;
+    min-height:100vh;
+}
+
+.main{
+    padding:40px;
+}
+
+.hero-card{
+    background:rgba(255,255,255,0.05);
+    border-radius:20px;
+    padding:50px;
+    margin-top:40px;
+    backdrop-filter:blur(10px);
+}
+
+.hero-card h1{
+    font-size:40px;
+    margin-bottom:10px;
+}
+
+.menu-btn{
+    background:#2563eb;
+    color:white;
+    font-size:20px;
+}
+
+.sidebar{
+    position:fixed;
+    top:0;
+    left:-250px;
+    width:250px;
+    height:100%;
+    background:#111827;
+    padding:30px 20px;
+    transition:0.3s;
+    z-index:1000;
+}
+
+.sidebar.active{
+    left:0;
+}
+
+.sidebar h2{
+    margin-bottom:30px;
+}
+
+.sidebar a{
+    display:block;
+    color:white;
+    text-decoration:none;
+    margin:20px 0;
+    font-size:18px;
+}
+
+.overlay{
+    position:fixed;
+    inset:0;
+    background:rgba(0,0,0,0.5);
+    display:none;
+}
+
+.overlay.active{
+    display:block;
+}
+
+.page-center{
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    min-height:100vh;
+    padding:30px;
+}
+
+.form-card,
+.list-card{
+    width:100%;
+    max-width:700px;
+    background:rgba(255,255,255,0.05);
+    padding:40px;
+    border-radius:20px;
+}
+
+.form-card h1,
+.list-card h1{
+    margin-bottom:30px;
+}
+
+form{
+    display:flex;
+    flex-direction:column;
+}
+
+label{
+    margin-top:15px;
+    margin-bottom:5px;
+}
+
+input{
+    padding:12px;
+    border:none;
+    border-radius:10px;
+    background:#1e293b;
+    color:white;
+}
+
+.button-group{
+    display:flex;
+    gap:15px;
+    margin-top:30px;
+}
+
+button{
+    cursor:pointer;
+    border:none;
+    padding:12px 20px;
+    border-radius:10px;
+    transition:0.3s;
+}
+
+.save-btn{
+    background:#2563eb;
+    color:white;
+}
+
+.clear-btn,
+.cancel-btn{
+    background:#374151;
+    color:white;
+}
+
+.delete-btn{
+    background:#dc2626;
+    color:white;
+}
+
+.edit-btn{
+    background:#9333ea;
+    color:white;
+    margin-top:10px;
+}
+
+button:hover{
+    transform:scale(1.03);
+}
+
+.task-card{
+    background:rgba(255,255,255,0.05);
+    padding:20px;
+    border-radius:15px;
+    margin-top:20px;
+}
+
+.back-btn{
+    color:white;
+    text-decoration:none;
+    font-size:20px;
+}
+
+.modal{
+    position:fixed;
+    inset:0;
+    background:rgba(0,0,0,0.7);
+    display:none;
+    justify-content:center;
+    align-items:center;
+}
+
+.modal-content{
+    background:#1e293b;
+    padding:40px;
+    border-radius:20px;
+    text-align:center;
+}
+
+.edit-form{
+    display:none;
+    margin-top:20px;
+}
+
+.empty-msg{
+    margin-top:20px;
+    opacity:0.8;
+}
